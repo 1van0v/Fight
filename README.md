@@ -1,2 +1,0 @@
-# Fighter
-Created with CodeSandbox
