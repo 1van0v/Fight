@@ -7,10 +7,7 @@ export class ImprovedFighter extends Fighter {
     }
 
     doubleHit(enemy, point) {
-        super.hit(enemy, point * 2);
+        return super.hit(enemy, point * 2);
     }
 
-    hit(enemy, point) {
-        this.doubleHit(enemy, point);
-    }
 }

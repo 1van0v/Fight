@@ -4,12 +4,12 @@ export class Fighter {
         this.name = name;
         this.health = health;
         this.power = power;
+        console.log(`${this.name} was created with: health = ${this.health}; power = ${this.power}`);
     }
 
     setDamage(damage) {
-        console.log(this.name + ' suffered ' + damage + ' damage');
         this.health -= damage;
-        console.log(this.name + ' has ' + this.health + ' points of health');
+        console.log(`${this.name}(${this.health} h) suffered ${damage}`);
         if (this.health <= 0) {
             console.log(this.name + ' is in knockout!!!');
             return this.knockout();
@@ -17,7 +17,7 @@ export class Fighter {
     }
 
     hit(enemy, point) {
-        console.log(this.name + ' attacked on' + enemy.name);
+        console.log(`${this.name} attacked on ${enemy.name}`);
         return enemy.setDamage(point * this.power);
     }
 
@@ -26,7 +26,7 @@ export class Fighter {
             setTimeout(() => {
                 console.log("time is over");
                 resolve('end');
-            }, 5000)
+            }, 500)
         })
     }
 }
